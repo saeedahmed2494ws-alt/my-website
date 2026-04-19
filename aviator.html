@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body style="background:black;color:white;text-align:center;">
+
+<button onclick="window.location='index.html'">⬅ Back</button>
+
+<h1>🚀 Aviator</h1>
+<h2 id="multi">1.00x</h2>
+
+<button onclick="start()">Start</button>
+
+<script>
+let i;
+function start(){
+let x=1;
+clearInterval(i);
+i=setInterval(()=>{
+x+=0.1;
+document.getElementById("multi").innerText=x.toFixed(2)+"x";
+if(Math.random()<0.05){
+clearInterval(i);
+alert("Crash at "+x.toFixed(2));
+}
+},200);
+}
+</script>
+
+</body>
+</html>
