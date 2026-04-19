@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body style="background:black;color:white;text-align:center;">
+
+<button onclick="window.location='index.html'">⬅ Back</button>
+
+<h1>🎡 Spin Wheel</h1>
+<h2 id="result">Try your luck</h2>
+
+<button onclick="spin()">Spin</button>
+
+<script>
+function spin(){
+let r=Math.random();
+if(r>0.5){
+document.getElementById("result").innerText="🎉 You won Rs 50";
+}else{
+document.getElementById("result").innerText="😢 Try again";
+}
+}
+</script>
+
+</body>
+</html>
