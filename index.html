@@ -1,1 +1,93 @@
-<img src="https://via.placeholder.com/150">
+<!DOCTYPE html>
+<html>
+<head>
+<title>Casino UI</title>
+
+<style>
+body {
+  margin: 0;
+  background: #111;
+  color: white;
+  font-family: Arial;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: black;
+  align-items: center;
+}
+
+.balance {
+  background: green;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.menu button {
+  margin-right: 10px;
+  padding: 10px;
+  border: none;
+  background: #222;
+  color: white;
+  border-radius: 10px;
+}
+
+/* BANNER */
+.banner {
+  background: linear-gradient(45deg, orange, gold);
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* GAMES */
+.games {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.card {
+  background: #1c1c1c;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card h3 {
+  padding: 10px;
+}
+
+/* BOTTOM MENU */
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: black;
+  padding: 10px 0;
+}
+
+.bottom div {
+  text-align: center;
+}
+</style>
+</head
