@@ -1,64 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Aviator</title>
+<title>Spin Wheel</title>
 
 <style>
 body {
-  background: black;
+  background: #111;
   color: white;
   text-align: center;
   font-family: Arial;
 }
-
-h1 { color: red; }
 
 button {
   padding: 10px 20px;
   background: green;
   border: none;
   color: white;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>🚀 Aviator</h1>
-<h2 id="multi">1.00x</h2>
+<h1>🎡 Spin Wheel</h1>
+<h2 id="result">Click Spin</h2>
 
-<button onclick="start()">Start</button>
-<button onclick="cashout()">Cashout</button>
+<button onclick="spin()">Spin</button>
 
 <script>
-let value = 1;
-let running = false;
-let interval;
+function spin(){
+  let rewards = [0, 10, 20, 50, 100];
+  let win = rewards[Math.floor(Math.random()*rewards.length)];
 
-function start(){
-  value = 1;
-  running = true;
-
-  interval = setInterval(()=>{
-    value += 0.1;
-    document.getElementById("multi").innerText = value.toFixed(2) + "x";
-
-    if(Math.random() < 0.05){
-      clearInterval(interval);
-      running = false;
-      alert("💥 Crashed!");
-    }
-
-  },200);
-}
-
-function cashout(){
-  if(running){
-    alert("💰 You cashed at " + value.toFixed(2) + "x");
-    clearInterval(interval);
-    running = false;
-  }
+  document.getElementById("result").innerText = "You won Rs " + win;
 }
 </script>
 
