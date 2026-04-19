@@ -1,49 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Betting Game</title>
-  <style>
-    body {
-      text-align: center;
-      font-family: Arial;
-      background: #222;
-      color: white;
-      padding: 50px;
-    }
-
-    .box {
-      background: #333;
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
-      margin: auto;
-    }
-
-    button {
-      padding: 10px 20px;
-      margin-top: 10px;
-      border: none;
-      background: green;
-      color: white;
-      cursor: pointer;
-    }
-  </style>
-</head>
-
-<body>
-
-<div class="box">
-  <h1>🎰 Betting Game</h1>
-  <h2 id="balance">Balance: 100</h2>
-
-  <button onclick="bet()">Place Bet (10)</button>
-
-  <h3 id="result"></h3>
-</div>
-
 <script>
-  let balance = 100;
+let balance = 100;
 
-  function bet() {
-    if (balance < 10) {
-      document.getElementById("result
+function bet() {
+  if (balance < 10) {
+    document.getElementById("result").innerText = "No money left!";
+    return;
+  }
+
+  balance -= 10;
+
+  let win = Math.random() < 0.5;
+
+  if (win) {
+    balance += 20;
+    document.getElementById("result").innerText = "🎉 You Win!";
+  } else {
+    document.getElementById("result").innerText = "😢 You Lose!";
+  }
+
+  document.getElementById("balance").innerText = "Balance: " + balance;
+}
+</script>
