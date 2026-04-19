@@ -1,55 +1,134 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Aviator Game</title>
+<title>Casino App</title>
 
 <style>
 body {
-  background: black;
+  margin: 0;
+  background: #111;
   color: white;
-  text-align: center;
   font-family: Arial;
 }
 
-h1 {
-  color: red;
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: black;
 }
 
-button {
-  padding: 10px 20px;
+.balance {
   background: green;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.menu button {
+  margin-right: 10px;
+  padding: 10px;
   border: none;
+  background: #222;
   color: white;
-  margin-top: 20px;
+  border-radius: 10px;
+}
+
+/* BANNER */
+.banner {
+  background: linear-gradient(45deg, orange, gold);
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  color: black;
+  text-align: center;
+}
+
+/* GAMES */
+.games {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.card {
+  background: #1c1c1c;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card h3 {
+  padding: 10px;
+}
+
+/* BOTTOM MENU */
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: black;
+  padding: 10px 0;
 }
 </style>
 </head>
 
 <body>
 
-<h1>🚀 Aviator</h1>
-<h2 id="multiplier">1.00x</h2>
+<div class="header">
+  <h3>🎰 Casino</h3>
+  <div class="balance">Rs 100</div>
+</div>
 
-<button onclick="startGame()">Start</button>
+<div class="menu">
+  <button>🏆 Exclusive</button>
+  <button>🚀 Crash</button>
+  <button>⚽ Sports</button>
+  <button>🎰 Slots</button>
+</div>
+
+<div class="banner">
+🎁 Get bonus Rs 500!
+</div>
+
+<div class="games">
+
+<div class="card" onclick="go('aviator.html')">
+<img src="https://i.imgur.com/2DhmtJ4.png">
+<h3>Aviator</h3>
+</div>
+
+<div class="card" onclick="go('spin.html')">
+<img src="https://i.imgur.com/6X4QKQp.png">
+<h3>Spin Wheel</h3>
+</div>
+
+</div>
+
+<div class="bottom">
+  <div>🏠 Home</div>
+  <div>🎰 Casino</div>
+  <div>💰 Deposit</div>
+  <div>👤 Profile</div>
+</div>
 
 <script>
-let interval;
-
-function startGame() {
-  let value = 1.00;
-
-  clearInterval(interval);
-
-  interval = setInterval(() => {
-    value += 0.1;
-    document.getElementById("multiplier").innerText = value.toFixed(2) + "x";
-
-    if(Math.random() < 0.05){
-      clearInterval(interval);
-      alert("💥 Crashed at " + value.toFixed(2) + "x");
-    }
-
-  }, 200);
+function go(page){
+  window.location = page;
 }
 </script>
 
